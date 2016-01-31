@@ -1,0 +1,10 @@
+Set up:
+pull the repo. git clone <reponame>
+Download typesafe activator from https://www.playframework.com/download
+
+cd into the directory just cloned and run the activitor that was downloaded and unzipped
+
+in my case it was 
+parkme > ../activator-1.3.7-minimal/activator
+
+pre-conditions: latest version of java (java 8) is required.
