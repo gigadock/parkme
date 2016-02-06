@@ -3,7 +3,18 @@
 # ~~~~
 
 # Home page
-GET     /                           controllers.Application.index()
+GET     /                           controllers.ParkingLotController.index()
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+
+# Routes API Rest
+GET     /parkingLot                  controllers.ParkingLotController.list(page: Integer ?= 1, size: Integer ?= 3)
+GET     /parkingLot/$id<[0-9]+>      controllers.ParkingLotController.get(id: Integer)
+POST    /parkingLot                  controllers.ParkingLotController.create()
+PUT     /parkingLot                  controllers.ParkingLotController.update()
+PATCH   /parkingLot                  controllers.ParkingLotController.update()
+DELETE  /parkingLot/$id<[0-9]+>      controllers.ParkingLotController.delete(id: Integer)
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
