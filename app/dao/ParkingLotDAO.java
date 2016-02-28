@@ -75,8 +75,14 @@ public class ParkingLotDAO {
      *
      * @return List<ParkingLot>
      */
-    public static List<ParkingLot> paginate(Integer page, Integer size) {
-        return (List<ParkingLot>) JPA.em().createQuery("SELECT m FROM " + ParkingLot.TABLE + " m ORDER BY id").setFirstResult(page*size).setMaxResults(size).getResultList();
+    public static List<ParkingLot> paginate(Integer page, Integer size, String name) {
+        String query = "SELECT m FROM " + ParkingLot.TABLE + " m";
+        if(name != null)
+            query += " where name like '%%"+name +"%%'";
+
+        return (List<ParkingLot>) JPA.em().createQuery(
+            query + " ORDER BY id"
+        ).setFirstResult(page*size).setMaxResults(size).getResultList();
     }
 
     /**

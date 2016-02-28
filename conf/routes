@@ -9,7 +9,7 @@ GET     /                           controllers.ParkingLotController.index()
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
 
 # Routes API Rest
-GET     /parkingLot                  controllers.ParkingLotController.list(page: Integer ?= 1, size: Integer ?= 3)
+GET     /parkingLot                  controllers.ParkingLotController.list(page: Integer ?= 1, size: Integer ?= 3, name: String ?= null)
 GET     /parkingLot/$id<[0-9]+>      controllers.ParkingLotController.get(id: Integer)
 POST    /parkingLot                  controllers.ParkingLotController.create()
 PUT     /parkingLot                  controllers.ParkingLotController.update()

@@ -73,8 +73,8 @@ public class ParkingLotService {
      *
      * @return List<ParkingLot>
      */
-    public static List<ParkingLot> paginate(Integer page, Integer size) {
-        return ParkingLotDAO.paginate(page, size);
+    public static List<ParkingLot> paginate(Integer page, Integer size, String name) {
+        return ParkingLotDAO.paginate(page, size, name);
     }
 
     /**
